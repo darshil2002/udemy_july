@@ -7,12 +7,12 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShopingListService {
 
   constructor() { }
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-  ];
+  // ingredients: Ingredient[] = [
+  //   new Ingredient('Apples', 5),
+  //   new Ingredient('Tomatoes', 10),
+  // ];
 
-  _getIngredients(){
-    return this.ingredients.slice()
-  }
+  // _getIngredients(){
+  //   return this.ingredients.slice()
+  // }
 }
