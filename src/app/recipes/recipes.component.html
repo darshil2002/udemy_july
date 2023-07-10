@@ -1,12 +1,15 @@
 <div class="row">
   <div class="col-md-5">
     <app-recipe-list (selectedRecipe)="myRecipe=$event"></app-recipe-list>
+
+    <!-- <app-recipe-list (selectedRecipe)="myRecipeFunction($event)"></app-recipe-list> -->
+    <!-- (outPutValue) -> now use $event for using that value  -->
   </div>
 
   <div class="col-md-7">
     <app-recipe-detail [recipe]="myRecipe" *ngIf="myRecipe; else elseBlock" ></app-recipe-detail>
     <ng-template #elseBlock>
-      <p>select recipe first</p>
+      <p>select recipe first </p>
     </ng-template>
   </div>
 </div>

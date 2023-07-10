@@ -7,13 +7,14 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  @Input() recipe:Recipe
   myRecipe:Recipe
   constructor() { }
 
   ngOnInit() {
     // console.log(this.recipe.description)
   }
- 
 
+  // myRecipeFunction(myData:Recipe){
+  //   this.myRecipe=myData
+  // }
 }
