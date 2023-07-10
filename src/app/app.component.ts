@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  finalData='recipe'
-  onNevigate(myData){
-    this.finalData=myData
-    console.log(this.finalData)
+  navigation='recipes'
+  onNevigate(nevigationValue){
+    this.navigation=nevigationValue;
   }
 }

@@ -1,9 +1,10 @@
-<app-header (throwSting)="onNevigate($event)"></app-header>
+<app-header (nevigationValue)="onNevigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="finalData==='recipes'"></app-recipes>
-      <app-shopping-list *ngIf="finalData!=='recipe'"></app-shopping-list>
+      <app-recipes *ngIf="navigation==='recipes'"></app-recipes>
+      <app-shopping-list *ngIf="navigation!=='recipes'"></app-shopping-list>
     </div>
   </div>
 </div>
+ 

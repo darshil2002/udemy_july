@@ -6,9 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   
-  @Output() throwSting=new EventEmitter<string>();
+  @Output() nevigationValue=new EventEmitter<string>();
 
   nevigationInNavbar(nevigationString:string){
-    this.throwSting.emit(nevigationString)
+    this.nevigationValue.emit(nevigationString)
   }
 }
