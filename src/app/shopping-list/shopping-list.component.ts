@@ -9,17 +9,16 @@ import { ShopingListService } from './shoping-list.service';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-  // ingredients: Ingredient[]
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-  ];
+  ingredients: Ingredient[]
+
 
   constructor(private _shopinListService:ShopingListService) { }
 
   ngOnInit() {
+    this.ingredients=this._shopinListService._getIngredients();
+    this._shopinListService.newIngrediantList.subscribe((res:Ingredient[])=>{
+      this.ingredients=res;
+    })
   }
-  addIng(myData:Ingredient){
-    this.ingredients.push(myData)
-  }
+
 }
