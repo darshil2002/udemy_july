@@ -4,9 +4,8 @@
   </div>
 
   <div class="col-md-7">
-    <app-recipe-detail [recipe]="myRecipe" *ngIf="myRecipe; else elseBlock" ></app-recipe-detail>
-    <ng-template #elseBlock>
-      <p>select recipe first </p>
-    </ng-template>
+
+    <router-outlet></router-outlet>
+
   </div>
 </div>

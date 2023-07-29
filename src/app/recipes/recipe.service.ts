@@ -39,6 +39,9 @@ export class RecipeService {
     // this will also work :)
     this._shopingListService.addIngArray(data)
   }
+  getSelectedRecipe(index:number){
+    return this.recipes[index]
+  }
 
 
 }
