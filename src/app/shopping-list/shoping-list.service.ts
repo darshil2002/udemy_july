@@ -1,6 +1,6 @@
+import { Ingredient } from './../shared/ingredient.model';
 import { Injectable } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShopingListService {
 
   newIngrediantList=new Subject<Ingredient[]>();
-
+  editId=new Subject<number>()
   constructor() { }
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -19,12 +19,26 @@ export class ShopingListService {
     return this.ingredients.slice();
   }
 
+  _getIngredient(index:number):Ingredient{
+    return this.ingredients[index]
+  }
+
   addIng(myData:Ingredient){
     this.ingredients.push(myData);
     this.newIngrediantList.next(this.ingredients.slice())
   }
+
   addIngArray(data:Ingredient[]){
     this.ingredients.push(...data)
     this.newIngrediantList.next(this.ingredients.slice())
+  }
+
+  editIngredientValue(index:number,data:Ingredient){
+    this.ingredients[index]=data;
+    this.newIngrediantList.next(this.ingredients.slice());
+  }
+  deleteIngredientValue(index:number){
+    this.ingredients.splice(index,1);
+    this.newIngrediantList.next(this.ingredients.slice());
   }
 }
